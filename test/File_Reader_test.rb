@@ -3,8 +3,8 @@ require 'minitest/pride'
 require_relative '../lib/file_reader'
 
 class FileReaderTest < Minitest::Test
-  def test_it_reads_a_file
+  def test_it_exists
     file_reader = FileReader.new
-    puts file_reader.read
+    assert_instance_of FileReader, file_reader
   end
 end
