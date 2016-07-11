@@ -1,3 +1,17 @@
+
+
+
+
+class NightWriter
+  attr_reader :file_reader
+
+  def initialize(file_text)
+    @reader = FileReader.new
+  end
+end
+
+
+
 #open and read a text file that has english in it
 
 #we need to create the output file in the same directory
