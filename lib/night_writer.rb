@@ -3,11 +3,22 @@
 
 
 class NightWriter
-  attr_reader :file_reader
 
-  def initialize(file_text)
-    @reader = FileReader.new
-  end
+  handle.close
+
+  repeated_text = incoming_text * 3
+
+  writer = File.open(ARGV[1], "w")
+
+  writer.write(repeated_text)
+
+  writer.close
+  #
+  # attr_reader :file_reader
+  #
+  # def initialize(file_text)
+  #   @reader = FileReader.new
+  # end
 end
 
 
