@@ -1,18 +1,22 @@
 class NightWriter
   attr_reader :file_reader,
-              :input
+              :input,
+              :stacked_braille
 
               ALPHABET = {"a" => ["0.", "..", ".."],
                           "b" => ["0.", "0.", ".."],
                           "c" => ["00", "..", ".."],
                           "d" => ["00", ".0", ".."],
                           "e" => ["0.", ".0", ".."],
+                          "A" => ["..0.", "....", ".0.."],
+                          "B" => ["..0.", "..0.", ".0.."]
                         }
 
 
 
   def initialize(input)
     @input = input
+    @stacked_braille = []
   end
 
   def count
@@ -46,8 +50,16 @@ class NightWriter
     end
   end
 
-  def combine
-    convert_letters.transpose
+  def join_letters
+    converted_combined_braille = convert_letters[0].zip(convert_letters[1]).map do |line|
+      line.join
+    end
+  end
+
+  def stacking
+    join_letters.each do |row|
+      @stacked_braille << row.insert(-1, "\n")
+    end
   end
 
 end
