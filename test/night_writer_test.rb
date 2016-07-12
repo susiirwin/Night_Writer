@@ -35,4 +35,8 @@ class NightWriterTest < Minitest::Test
   end
 
   def test_it_can_line_letters_up_correctly
+    night_writer = NightWriter.new("ab")
+    expected = [[1,0,1,0], [0,0,1,0], [0,0,0,0]]
+    assert_equal expected, night_writer.combine
+  end
 end

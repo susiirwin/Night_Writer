@@ -6,7 +6,7 @@ class NightWriter
                           "b" => [[1,0], [1,0], [0,0]],
                           "c" => [[1,1], [0,0], [0,0]],
                           "d" => [[1,1], [0,1], [0,0]],
-                          "e" => [[1,0], [0,1], [0,0]]
+                          "e" => [[git1,0], [0,1], [0,0]]
                         }
 
 
@@ -46,7 +46,10 @@ class NightWriter
     end
   end
 
-  
+  def combine
+    convert_letters.transpose
+  end
+
 end
 
 
