@@ -11,8 +11,8 @@ class NightWrite
   end
 end
 
-filename = './message.txt'
-puts NightWrite.read(filename)
+# filename = './message.txt'
+# puts NightWrite.read(filename)
 
 #
 # message = ARGV[0]
