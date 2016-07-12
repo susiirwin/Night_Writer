@@ -1,13 +1,25 @@
 class NightWriter
-  attr_reader :file_reader
+  attr_reader :file_reader,
+              :input
 
-  def initialize
-    @reader = FileReader.new
+              ALPHABET = {"a" => ["0.", "..", ".."],
+                          "b" => ["0.", "0.", ".."],
+                          "c" => ["00", "..", ".."],
+                          "d" => ["00", ".0", ".."],
+                          "e" => ["0.", ".0", ".."],
+                        }
+
+
+
+  def initialize(input)
+    @input = input
   end
 
-  def file_reader
-    @file_reader
+  def count
+    input.length
   end
+
+
 
   def encode_file_to_braille
     # I wouldn't worry about testing this method
@@ -16,19 +28,32 @@ class NightWriter
     braille = encode_to_braille(plain)
   end
 
-  def encode_to_braille(input)
+  def encode_to_braille
+    ALPHABET[input]
+
     # you've taken in an INPUT string
     # do the magic
     # send out an OUTPUT string
   end
+
+  def split_the_input_text
+    input.chars
+  end
+
+  def convert_letters
+    split_the_input_text.map do |letter|
+      ALPHABET[letter]
+    end
+  end
+
+  def combine
+    convert_letters.transpose
+  end
+
 end
 
-puts ARGV.inspect
 
 
-
-
-#open and read a text file that has english in it
 
 #we need to create the output file in the same directory
 
