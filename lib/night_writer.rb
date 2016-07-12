@@ -1,12 +1,13 @@
 class NightWriter
-  attr_reader :file_reader
+  attr_reader :file_reader,
+              :input
 
-  def initialize
-    @reader = FileReader.new
+  def initialize(input)
+    @input = input
   end
 
-  def file_reader
-    @file_reader
+  def count
+    input.length
   end
 
   def encode_file_to_braille
@@ -17,18 +18,27 @@ class NightWriter
   end
 
   def encode_to_braille(input)
+    a = method_1(input)
+
     # you've taken in an INPUT string
     # do the magic
     # send out an OUTPUT string
   end
+
+  def method_1(input)
+    method_2(input)
+  end
+
+  def method_2(input)
+    method_3(input)
+  end
+
+  def method_3(input)
+  end
 end
 
-puts ARGV.inspect
 
 
-
-
-#open and read a text file that has english in it
 
 #we need to create the output file in the same directory
 
