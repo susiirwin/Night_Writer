@@ -1,25 +1,30 @@
-
-
-
-
 class NightWriter
+  attr_reader :file_reader
 
-  handle.close
+  def initialize
+    @reader = FileReader.new
+  end
 
-  repeated_text = incoming_text * 3
+  def file_reader
+    @file_reader
+  end
 
-  writer = File.open(ARGV[1], "w")
+  def encode_file_to_braille
+    # I wouldn't worry about testing this method
+    # unless you get everything else done
+    plain = @reader.read
+    braille = encode_to_braille(plain)
+  end
 
-  writer.write(repeated_text)
-
-  writer.close
-  #
-  # attr_reader :file_reader
-  #
-  # def initialize(file_text)
-  #   @reader = FileReader.new
-  # end
+  def encode_to_braille(input)
+    # you've taken in an INPUT string
+    # do the magic
+    # send out an OUTPUT string
+  end
 end
+
+puts ARGV.inspect
+
 
 
 
