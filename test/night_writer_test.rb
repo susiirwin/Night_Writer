@@ -24,7 +24,7 @@ class NightWriterTest < Minitest::Test
     assert_equal expected, @night_writer.encode_to_braille
   end
 
-  def test_it_can_convert_two_letters
+  def test_it_can_seperate_two_letters
     assert_equal ["a", "b"], @night_writer.split_the_input_text
   end
 
@@ -34,7 +34,6 @@ class NightWriterTest < Minitest::Test
   end
 
   def test_it_stores_two_letters_encoded_in_array
-
     expected = ["0.0.", "..0.", "...."]
     assert_equal expected, @night_writer.join_letters
   end

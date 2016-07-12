@@ -8,6 +8,7 @@ class NightWriter
                           "c" => ["00", "..", ".."],
                           "d" => ["00", ".0", ".."],
                           "e" => ["0.", ".0", ".."],
+                          " " => ["..", "..", ".."],
                           "A" => ["..0.", "....", ".0.."],
                           "B" => ["..0.", "..0.", ".0.."]
                         }
@@ -23,22 +24,13 @@ class NightWriter
     input.length
   end
 
+  # def encode_file_to_braille
+  #   # I wouldn't worry about testing this method
+  #   # unless you get everything else done
+  #   plain = @reader.read
+  #   braille = encode_to_braille(plain)
+  # end
 
-
-  def encode_file_to_braille
-    # I wouldn't worry about testing this method
-    # unless you get everything else done
-    plain = @reader.read
-    braille = encode_to_braille(plain)
-  end
-
-  def encode_to_braille
-    ALPHABET[input]
-
-    # you've taken in an INPUT string
-    # do the magic
-    # send out an OUTPUT string
-  end
 
   def split_the_input_text
     input.chars
@@ -54,6 +46,7 @@ class NightWriter
     converted_combined_braille = convert_letters[0].zip(convert_letters[1]).map do |line|
       line.join
     end
+    return converted_combined_braille
   end
 
   def stacking
@@ -62,9 +55,16 @@ class NightWriter
     end
   end
 
+
+  def encode_to_braille
+    ALPHABET[input]
+
+    # you've taken in an INPUT string
+    # do the magic
+    # send out an OUTPUT string
+  end
+
 end
-
-
 
 
 #we need to create the output file in the same directory
