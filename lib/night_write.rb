@@ -2,7 +2,7 @@ require './lib/night_writer'
 
 class NightWrite
   def self.read(filename)
-    input = File.read(message).chomp
+    File.read(filename).chomp
   end
 
   def self.write(filename, message)
@@ -11,8 +11,12 @@ class NightWrite
   end
 end
 
-message = ARGV[0]
-write_to_braille = ARGV[1]
+filename = './message.txt'
+puts NightWrite.read(filename)
+
+#
+# message = ARGV[0]
+# write_to_braille = ARGV[1]
 
 
 # input_text = NightWriter.new(input)
