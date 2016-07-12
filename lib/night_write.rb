@@ -1,4 +1,4 @@
-require './lib/night_writer'
+require './lib/encode'
 
 filename = ARGV[0]
 input = File.read(filename).chomp
