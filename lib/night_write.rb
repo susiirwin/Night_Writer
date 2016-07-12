@@ -4,8 +4,8 @@ filename = ARGV[0]
 input = File.read(filename).chomp
 
 
-character = NightWriter.new(input)
-output = character.encode_to_braille
-# File.write(path_to_where_you_want_to_write, content_of_what_youre_writing)
+input_text = NightWriter.new(input)
+#once we create the encode method, it goes in line 9 where we have input * 3
+output = input_text.input * 3
 File.write(ARGV[1], output)
-puts "Created '#{ARGV[1]}' containing #{character.count} characters"
+puts "Created '#{ARGV[1]}' containing #{input_text.count} characters"

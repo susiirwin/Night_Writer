@@ -2,6 +2,15 @@ class NightWriter
   attr_reader :file_reader,
               :input
 
+              ALPHABET = {"a" => [[1,0], [0,0], [0,0]],
+                          "b" => [[1,0], [1,0], [0,0]],
+                          "c" => [[1,1], [0,0], [0,0]],
+                          "d" => [[1,1], [0,1], [0,0]],
+                          "e" => [[1,0], [0,1], [0,0]]
+                        }
+
+
+
   def initialize(input)
     @input = input
   end
@@ -10,6 +19,8 @@ class NightWriter
     input.length
   end
 
+
+
   def encode_file_to_braille
     # I wouldn't worry about testing this method
     # unless you get everything else done
@@ -17,24 +28,25 @@ class NightWriter
     braille = encode_to_braille(plain)
   end
 
-  def encode_to_braille(input)
-    a = method_1(input)
+  def encode_to_braille
+    ALPHABET[input]
 
     # you've taken in an INPUT string
     # do the magic
     # send out an OUTPUT string
   end
 
-  def method_1(input)
-    method_2(input)
+  def split_the_input_text
+    input.chars
   end
 
-  def method_2(input)
-    method_3(input)
+  def convert_letters
+    split_the_input_text.map do |letter|
+      ALPHABET[letter]
+    end
   end
 
-  def method_3(input)
-  end
+  
 end
 
 
