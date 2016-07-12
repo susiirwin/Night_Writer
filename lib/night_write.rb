@@ -1,3 +1,4 @@
+# this is the runner file
 require './lib/night_writer'
 
 filename = ARGV[0]
