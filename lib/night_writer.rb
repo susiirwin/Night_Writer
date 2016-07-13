@@ -89,6 +89,7 @@ class NightWriter
       ALPHABET[letter]
     end
   end
+  require 'pry'; binding.pry
 
   def join_letters
     first   = []
@@ -96,16 +97,12 @@ class NightWriter
     third   = []
 
     convert_letters.each do |letter|
-      unless @counter == 80
         first   << letter[0]
         second  << letter[1]
         third   << letter[2]
-        require 'pry'; binding.pry
-      else
-        first   << letter[0].insert(-1, "\n")
-        second  << letter[1].insert(-1, "\n")
-        third   << letter[2].insert(-1, "\n")
-      end
+        # first   << letter[0].insert(-1, "\n")
+        # second  << letter[1].insert(-1, "\n")
+        # third   << letter[2].insert(-1, "\n")
     end
     [first.join, second.join, third.join]
   end
