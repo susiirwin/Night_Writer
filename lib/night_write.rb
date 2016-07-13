@@ -1,12 +1,15 @@
 require './lib/night_writer'
 
 class NightWrite
+  attr_reader :write_to_braille
+
   def self.read(filename)
-    File.read(filename).chomp
+    @message = File.read(filename).chomp
   end
 
   def self.write(filename, message)
     require 'pry'; binding.pry
+    @write_to_braille = @message.read
     output = File.write(write_to_braille, message)
   end
 end

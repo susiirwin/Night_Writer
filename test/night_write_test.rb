@@ -12,3 +12,6 @@ class NightWriteTest < Minitest::Test
     # assert_equal "hello world", NightWrite.read(output_filename)
   end
 end
+
+
+NightWrite.write(@write_to_braille)
