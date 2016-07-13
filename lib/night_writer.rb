@@ -62,7 +62,7 @@ class NightWriter
                           "-" => ["..", "..", "00"],
                           "." => ["..", "00", ".0"],
                           "?" => ["..", "0.", "00"],
-                          
+
                         }
 
   def initialize(input)
@@ -101,4 +101,8 @@ class NightWriter
     [first.join, second.join, third.join]
   end
 
+  def row_length
+    join_letters.first.length
+  end
+  
 end

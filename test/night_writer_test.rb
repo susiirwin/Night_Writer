@@ -55,4 +55,11 @@ class NightWriterTest < Minitest::Test
     expected = ["..0.0.", "....0.", ".0...."]
     assert_equal expected, night_writer.encode_to_braille
   end
+
+  def test_it_can_get_the_length_of_output_line
+    night_writer = NightWriter.new("")
+    assert_equal 2, night_writer.row_length
+
+  end
+
 end
