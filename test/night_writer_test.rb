@@ -59,7 +59,9 @@ class NightWriterTest < Minitest::Test
   def test_it_can_get_the_length_of_output_line
     night_writer = NightWriter.new("")
     assert_equal 2, night_writer.row_length
-
   end
 
+  def test_if_line_is_longer_than_160_characters_it_gets_a_new_line
+
+    
 end
