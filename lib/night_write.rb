@@ -10,7 +10,7 @@ class NightWrite
 
   def self.write(filename, message)
     english = NightWriter.new(@message)
-    write_to_braille = english.stacking
+    write_to_braille = english.encode_to_braille
     english_file = File.open(ARGV[1], 'w')
     File.write(english_file, write_to_braille)
   end
