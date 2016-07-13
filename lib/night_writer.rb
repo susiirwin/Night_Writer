@@ -1,7 +1,5 @@
 class NightWriter
-  attr_reader :file_reader,
-              :input,
-              :stacked_braille
+  attr_reader :input
 
               ALPHABET = {"a" => ["0.", "..", ".."],
                           "b" => ["0.", "0.", ".."],
@@ -67,7 +65,6 @@ class NightWriter
 
   def initialize(input)
     @input = input
-    @stacked_braille = []
     @counter = 0
   end
 
@@ -83,16 +80,23 @@ class NightWriter
     input.chars
   end
 
-  def method_name
+#require 'pry'; binding.pry
 
-  end
+  # def method_name
+  #   if .upcase? == true, counter + 4
+  #     !.upcase add counter + 2
+  #     if counter >=161
+  #       tell it to move on to convert_methods
+
+  #       reset counter
+  # end
 
   def convert_letters
     split_the_input_text.map do |letter|
       ALPHABET[letter]
+      # add a clause to insert "\n\n\n" to each element in barille array if line break
     end
   end
-  require 'pry'; binding.pry
 
   def join_letters
     first   = []
@@ -112,4 +116,4 @@ class NightWriter
   end
 end
 
-@counter += 1
+# @counter += 1
