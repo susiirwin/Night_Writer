@@ -19,8 +19,7 @@ class NightWriterTest < Minitest::Test
   end
 
   def test_it_can_convert_two_letters
-    skip
-    expected =
+    expected = ["0.0.", "..0.", "...."]
     assert_equal expected, @night_writer.encode_to_braille
   end
 
@@ -38,21 +37,22 @@ class NightWriterTest < Minitest::Test
     assert_equal expected, @night_writer.join_letters
   end
 
-  def test_it_can_line_letters_up_correctly
-    night_writer = NightWriter.new("ab")
-    expected = ["0.0.\n", "..0.\n", "....\n"]
-    assert_equal expected, night_writer.stacking
-  end
-
   def test_it_can_convert_an_uppercase_letter
+    night_writer = NightWriter.new("A")
+    expected = ["..0.", "....", ".0.."]
+    assert_equal expected, night_writer.encode_to_braille
 
   end
 
   def test_it_can_convert_two_uppercase_letters
-
+     night_writer = NightWriter.new("AB")
+     expected = ["..0...0.", "......0.", ".0...0.."]
+     assert_equal expected, night_writer.encode_to_braille
   end
 
   def test_it_can_convert_an_uppercase_letter_a_lowercase_letter
-
+    night_writer = NightWriter.new("Ab")
+    expected = ["..0.0.", "....0.", ".0...."]
+    assert_equal expected, night_writer.encode_to_braille
   end
 end
