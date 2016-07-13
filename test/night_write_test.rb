@@ -14,4 +14,4 @@ class NightWriteTest < Minitest::Test
 end
 
 
-NightWrite.write(@write_to_braille)
+# NightWrite.write(@write_to_braille)
