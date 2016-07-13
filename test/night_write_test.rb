@@ -7,9 +7,10 @@ class NightWriteTest < Minitest::Test
     filename = ARGV[0]
     night_writer = NightWriter.new(filename)
     assert_equal NightWrite.read(filename), "hello how are you doing"
-    # output_filename = './braille.txt'
-    # NightWrite.write(output_filename, "hello world")
-    # assert_equal "hello world", NightWrite.read(output_filename)
+
+    output_filename = './braille.txt'
+    NightWrite.write(output_filename, "hello world")
+    assert_equal "hello world", NightWrite.read(output_filename)
   end
 end
 
