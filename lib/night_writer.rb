@@ -68,6 +68,7 @@ class NightWriter
   def initialize(input)
     @input = input
     @stacked_braille = []
+    @counter = 0
   end
 
   def encode_to_braille
@@ -84,19 +85,27 @@ class NightWriter
 
   def convert_letters
     split_the_input_text.map do |letter|
+      @counter += 1
       ALPHABET[letter]
     end
   end
 
   def join_letters
-    first = []
-    second = []
-    third = []
+    first   = []
+    second  = []
+    third   = []
 
     convert_letters.each do |letter|
-      first << letter[0]
-      second << letter[1]
-      third << letter[2]
+      unless @counter == 80
+        first   << letter[0]
+        second  << letter[1]
+        third   << letter[2]
+        require 'pry'; binding.pry
+      else
+        first   << letter[0].insert(-1, "\n")
+        second  << letter[1].insert(-1, "\n")
+        third   << letter[2].insert(-1, "\n")
+      end
     end
     [first.join, second.join, third.join]
   end
@@ -104,5 +113,4 @@ class NightWriter
   def row_length
     join_letters.first.length
   end
-  
 end
