@@ -100,17 +100,17 @@ class NightWriter
       # add a clause to insert "\n\n\n" to each element in barille array if line break
     end
   end
-
-  def counter_work
-    convert_letters.each do |letter|
-      if letter[0][0].length == 4
-        @counter += 4
-      else
-        @counter += 2
-      end
-    end
-    @counter
-  end
+  #
+  # def counter_work
+  #   convert_letters.each do |letter|
+  #     if letter[0][0].length == 4
+  #       @counter += 4
+  #     else
+  #       @counter += 2
+  #     end
+  #   end
+  #   @counter
+  # end
 
   def join_letters
     first   = []
