@@ -122,12 +122,24 @@ class NightWriter
         second  << letter[1]
         third   << letter[2]
     end
-    [first.join, second.join, third.join]
+    insert_new_lines(first.join, second.join, third.join)
+  end
+
+  def insert_new_lines(first_line, second_line, third_line)
+    final_string = ""
+    until first_line.length == 0
+      final_string << first_line.slice!(0..79) + "\n"
+      final_string << second_line.slice!(0..79) + "\n"
+      final_string << third_line.slice!(0..79) + "\n"
+    end
+    final_string
   end
 
   def row_length
     join_letters.first.length
   end
 end
+
+
 
 # @counter += 1
