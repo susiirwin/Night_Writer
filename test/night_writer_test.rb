@@ -41,7 +41,12 @@ class NightWriterTest < Minitest::Test
     night_writer = NightWriter.new("A")
     expected = ["..0.", "....", ".0.."]
     assert_equal expected, night_writer.encode_to_braille
+  end
 
+  def test_it_increases_the_counter
+    night_writer = NightWriter.new("Ab")
+    expected = 6
+    assert_equal expected, night_writer.counter_work
   end
 
   def test_it_can_convert_two_uppercase_letters

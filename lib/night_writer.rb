@@ -1,5 +1,6 @@
 class NightWriter
-  attr_reader :input
+  attr_reader :input,
+              :counter
 
               ALPHABET = {"a" => ["0.", "..", ".."],
                           "b" => ["0.", "0.", ".."],
@@ -82,9 +83,11 @@ class NightWriter
 
 #require 'pry'; binding.pry
 
-  # def method_name
-  #   if .upcase? == true, counter + 4
-  #     !.upcase add counter + 2
+  # def counter_work
+  #   if input.upcase? == true
+  #      @counter += 4
+#     else
+  #     upcase add counter += 2
   #     if counter >=161
   #       tell it to move on to convert_methods
 
@@ -96,6 +99,17 @@ class NightWriter
       ALPHABET[letter]
       # add a clause to insert "\n\n\n" to each element in barille array if line break
     end
+  end
+
+  def counter_work
+    convert_letters.each do |letter|
+      if letter[0][0].length == 4
+        @counter += 4
+      else
+        @counter += 2
+      end
+    end
+    @counter
   end
 
   def join_letters
