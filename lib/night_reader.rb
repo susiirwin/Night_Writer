@@ -1,4 +1,4 @@
-require './lib/dictionary'
+require './dictionary'
 
 class NightReader
   attr_reader :input
@@ -8,9 +8,11 @@ class NightReader
   end
 
   def translate_to_plain
-    input.map do |symbol|
-      BRAILLE_ALPHABET[symbol]
+    letter = ""
+    input.each do |symbol|
+      letter << BRAILLE_ALPHABET[symbol].to_s
     end
+
   end
 
   def join_the_characters

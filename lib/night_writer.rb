@@ -1,4 +1,4 @@
-require './lib/dictionary'
+require './dictionary'
 
 class NightWriter
   attr_reader :input,
