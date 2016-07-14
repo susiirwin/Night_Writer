@@ -7,12 +7,17 @@ class NightReader
     @input = input
   end
 
-  def translate_to_plain
-    letter = ""
-    input.each do |symbol|
-      letter << BRAILLE_ALPHABET[symbol].to_s
+  def get_array
+    smashed_braille = input.gsub("\n", "").chars.each_slice(2).to_a
+    result = smashed_braille.map do |single|
+      single.join
     end
+    result
 
+  end
+
+  def convert_braille
+    BRAILLE_ALPHABET[get_array]
   end
 
   def join_the_characters
