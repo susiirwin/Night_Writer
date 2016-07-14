@@ -5,8 +5,8 @@ class NightWriter
               :counter
 
   def initialize(input)
-    @input = input
-    @counter = 0
+    @input    = input
+    @counter  = 0
   end
 
   def encode_to_braille
@@ -21,41 +21,14 @@ class NightWriter
     input.chars
   end
 
-#require 'pry'; binding.pry
-
-  # def counter_work
-  #   if input.upcase? == true
-  #      @counter += 4
-#     else
-  #     upcase add counter += 2
-  #     if counter >=161
-  #       tell it to move on to convert_methods
-
-  #       reset counter
-  # end
-
   def convert_letters
     split_the_input_text.map do |letter|
       ALPHABET[letter]
-      # add a clause to insert "\n\n\n" to each element in barille array if line break
     end
   end
-  #
-  # def counter_work
-  #   convert_letters.each do |letter|
-  #     if letter[0][0].length == 4
-  #       @counter += 4
-  #     else
-  #       @counter += 2
-  #     end
-  #   end
-  #   @counter
-  # end
 
   def join_letters
-    first   = []
-    second  = []
-    third   = []
+    first, second, third   = [], [], []
 
     convert_letters.each do |letter|
         first   << letter[0]
@@ -68,18 +41,10 @@ class NightWriter
   def insert_new_lines(first_line, second_line, third_line)
     final_string = ""
     until first_line.length == 0
-      final_string << first_line.slice!(0..79) + "\n"
+      final_string << first_line.slice!(0..79)  + "\n"
       final_string << second_line.slice!(0..79) + "\n"
-      final_string << third_line.slice!(0..79) + "\n"
+      final_string << third_line.slice!(0..79)  + "\n"
     end
     final_string
   end
-
-  def row_length
-    join_letters.first.length
-  end
 end
-
-
-
-# @counter += 1
