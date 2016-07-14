@@ -9,7 +9,7 @@ class NightWriterTest < Minitest::Test
 
   def test_it_can_count
     night_writer = NightWriter.new("Hello World")
-    
+
     assert_equal 11, night_writer.count
   end
 
@@ -37,7 +37,7 @@ class NightWriterTest < Minitest::Test
     assert_equal expected, @night_writer.convert_letters
   end
 
-  def test_it_stores_two_letters_encoded_in_array
+  def test_it_stores_two_letters_encoded_in_string
     expected = "0.0.\n..0.\n....\n"
 
     assert_equal expected, @night_writer.join_letters
